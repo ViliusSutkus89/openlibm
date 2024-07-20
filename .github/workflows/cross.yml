@@ -5,10 +5,6 @@ on:
     branches:
       - master
   push:
-    branches:
-      - master
-    tags: '*'
-
 jobs:
   build-cross-qemu:
     runs-on: ubuntu-latest
