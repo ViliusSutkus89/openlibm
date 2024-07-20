@@ -44,7 +44,7 @@ if("${CMAKE_C_COMPILER_ID}" MATCHES "Clang")
     list(APPEND C_ASM_COMPILE_FLAGS "-fno-strict-aliasing" "-ffp-exception-behavior=strict")
 elseif("${CMAKE_C_COMPILER_ID}" STREQUAL "GNU")
     list(APPEND C_ASM_COMPILE_FLAGS "-fno-gnu89-inline")
-else()
+elseif("${CMAKE_C_COMPILER_ID}" NOT STREQUAL "MSVC")
     message(FATAL_ERROR "${PROJECT_NAME} not set up to be compiled with ${CMAKE_C_COMPILER_ID}")
 endif()
 
