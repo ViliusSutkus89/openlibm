@@ -45,6 +45,8 @@ endif
 
 AR := $(TOOLPREFIX)ar
 
+$(error "USEGCC: $(USEGCC), USECLANG: $(USECLANG), OS: $(OS)")
+
 ifeq ($(USECLANG),1)
 USEGCC ?= 0
 CC = clang

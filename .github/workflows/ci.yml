@@ -6,6 +6,7 @@ on:
   push:
 jobs:
   test-unix:
+    if: false
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
@@ -22,6 +23,7 @@ jobs:
       - run: make
       - run: make test
   build-unix-cmake:
+    if: false
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
@@ -46,6 +48,7 @@ jobs:
           - { sys: mingw64, env: x86_64 }
           - { sys: mingw32, env: i686 }
           - { sys: ucrt64,  env: ucrt-x86_64 }  # Experimental!
+          - { sys: clang32, env: clang-i686 } # Experimental!
           - { sys: clang64, env: clang-x86_64 } # Experimental!
     defaults:
       run:
